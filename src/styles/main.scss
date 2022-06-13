@@ -1,3 +1,116 @@
 @use 'reset';
 @use 'fonts';
 @import "~bootstrap/scss/bootstrap";
+
+// Для плавної появи стилі
+.first,
+.two,
+.three,
+.four,
+.five,
+.six{
+    opacity: 0;
+}
+.fadeIn {
+    opacity: 1;
+    animation: animIn 0.5s ease-in;
+}
+.fadeOut {
+    opacity: 0;
+    animation: animOut 0.5s ease-in-out;
+}
+@keyframes animIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes animOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+// Шрифт
+$f_c: Comfortaa, sans-serif;
+// Стиль виділення коду
+code{
+    font-size: 16px;
+    font-weight: 600;
+}
+.comment_code{
+    color: #21212262;
+}
+.fix_upper{
+    text-transform: none;
+}
+// Титульний текст 
+.tit_text_learn{
+    font: 600 25px $f_c;
+    padding: 25px 0 25px;
+    margin: 0px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+// Стилі кнопки акорду та розділу
+.btn_accord_style{
+    background-color: #66666863;
+    &:not(.collapsed) {
+        color: #fff;
+        background-color: #6e6e6ed8;
+        box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+    }
+    &:not(.collapsed)::after {
+        background: url('../img/chevron-down.svg') no-repeat center;
+        transform: rotate(-180deg);
+    }
+    &:focus{
+        box-shadow: none;
+    }
+}
+.header_name_item_stl{
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    font: 800 17px $f_c;
+    text-transform: uppercase;
+}
+
+// Стилі контенту акорду
+
+.sec_tit_txt_acord{
+    text-align: center;
+    margin: 5px auto 15px;
+    width: 100%;
+    font: 700 15px $f_c;
+    text-transform: uppercase;
+    background: rgba(136, 136, 136, 0.3);
+    padding: 5px 0 3px;
+    border-radius: 5px;
+}
+.content_art{
+    font: 400 15px $f_c;
+}
+.list_style_accord {
+    margin-bottom: 5px;
+    position: relative;
+    transition: .4s all ease-in-out;
+    padding: 3px 5px;
+    border-radius: 10px;
+
+    &:before{
+        content: "";
+        width: 10px;
+        height: 10px;
+        background: url('../img/caret-right-fill.svg');
+        background-size: cover;
+        position: absolute;
+        left: -22px;
+        top: 6px;
+    
+        }
+    &:hover {
+        background-color: rgba(129, 129, 129, 0.17);
+    }
+}
+.accordion_body{
+    padding: 15px;
+    font: 500 15px $f_c;
+}

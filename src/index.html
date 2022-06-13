@@ -4,10 +4,185 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Webpack 5</title>
+        <title>JavaScript ES6+</title>
         <!-- <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> тут іконка вкладки -->
     </head>
     <body>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <h1 class="tit_text_learn">JavaScript ES6 - Для ознайомлення оберіть розділ</h1>
+            <!-- Змінні let та const -->
+            <div class="accordion-item first">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed btn_accord_style" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <p class="header_name_item_stl">Змінні let | const</p>
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <article class="accordion_body">
+                        <p class="sec_tit_txt_acord">Змінні</p>
+                        <p>Всі змінні бажано вказувати в стилі "camelCase"<code>(приклад: let firstName = 'Ivan')</code></p>
+                        <ul>
+                            <li class="list_style_accord"><code>const = 42</code>  Змінні такого типу присутні лише для читання, перезапис даної змінної недоступний (бажано використовувати якщо змінна являється незмінною). Але якщо це масив, чи об'єкт, присутня змога робити в ньому зміни, але без перепризнаення.</li>
+                            <li class="list_style_accord"><code>let = 42</code> Оголошення змінної, доступна для перезапису. До них можна звернутись лише в межах одних фігурних скобок </li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+            <!-- Стрілочні функції -->
+            <div class="accordion-item two">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed btn_accord_style" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        <p class="header_name_item_stl">Стрілочні функції</p>
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <article class="accordion_body">
+                        <p class="sec_tit_txt_acord">Основи</p>
+                        <p>Приклад стрілочної функції:</p>
+                        <ul>
+                            <li class="list_style_accord">
+                                <code>
+                                    function person(name){ <code class="comment_code">// Приклад звичайної функції</code><br>console.log('Привіт - ', name)<br>}<br>
+                                </code>
+                            </li>
+                            <li class="list_style_accord">
+                                <code>
+                                    let arrow = (name) => { <code class="comment_code">// Приклад стрілочної функції, де name параметр</code><br>console.log('Привіт - ',name)<br>}<br>
+                                </code>
+                            </li>
+                            <li class="list_style_accord">
+                                <code>
+                                    let arrow = name => console.log('Привіт - ',name)<br>
+                                </code>
+                                <code class="comment_code">// Скорочений приклад стрілочної функції, де name параметр, його можна не брати в дужки так як параметр тільки 1, також у фігурні дужки не берем умову, у зв'язку з тим що умова у вигляді однієї стрічки</code>
+                            </li>
+                        </ul>
+                        <p>Усі ці функції рівнозначні, мають лише різний запис. Якщо до функції не передаються параметри, дужки писати потрібно обов'язково</p>
+                        <p class="sec_tit_txt_acord">Контекст</p>
+                        <p> Приклади використання контексту <code>this</code> в звичайній функції та в стрілочній функції</p>
+                        <ul>
+                            <li class="list_style_accord"><code>function log () {<br>&nbsp console.log(this)<br>}<br> let person = {<br>&nbsp; name:'Boris',<br>&nbsp age: 29, <br>&nbsp logFunc: log<br>}<br><br> person.logFunc()</code></li>
+                        </ul>
+                        <p>В даному випадку в звичайній функції при використанні контексту <code>this</code> буде відображено сам об'єкт.Так як <code>function</code> формує свій власний контекст</p>
+                        <ul>
+                            <li class="list_style_accord"><code>let arrowLog = () => console.log(this)<br> person.arrowLog()</code></li>
+                        </ul>
+                        <p>В випадку стрілочної функції контекст <code>this</code> буде вказувати на глобальний об'єкт <code>window</code>. Завжди взказує на контекст який знаходиться вище</p>
+                    </article>
+                </div>
+            </div>
+            <!-- Параметри за замовчуванням -->
+            <div class="accordion-item three">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed btn_accord_style" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <p class="header_name_item_stl">Праметри за замовчуванням</p>
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <article class="accordion_body">
+                        <p class="sec_tit_txt_acord">Параметри за замовчуванням</p>
+                        <p>Приклад функції з параметрами за замовчуванням:</p>
+                        <ul>
+                            <li class="list_style_accord">
+                                <code>
+                                    let somFunc = (a = 1,b = 1) => a + b<br>console.log(someFunc(40,51))
+                                </code>
+                                <code class="comment_code">// В Даному випадку присутня стрілочна функція, значення параметрів якої за замовчуванням 1, але якщо при викликук функції буде вказано інші параметри, для прикладу 40 та 51 то вони будуть пріорітетом для прийняття як параметр</code>
+                            </li>
+                            <li class="list_style_accord">
+                                <code>
+                                    function sumAll(...all){<br>&nbsp;
+                                    console.log(all)<br>
+                                    }<br>sumAll(1,2,3,4,5,6,7)
+                                </code>
+                                <code class="comment_code">// Для прийняття безлічі значень використовується "...all" - оператор rest. В даному випадку всі значення які будуть передані вони будуть сформовані в масив</code>
+                            </li>
+                            <li class="list_style_accord">
+                                <code>
+                                    function sumAll(...all){<code class="comment_code">// Приклад функції яка додає усі прийняті параметри, вони можуть бути збільшені або зменшені</code>
+                                    <br>&nbsp;
+                                    let result = 0<br>&nbsp;
+                                    for (let num of all){<br>&nbsp;&nbsp;
+                                    result += num<br>&nbsp;
+                                    }<br>&nbsp;
+                                    return result<br>
+                                    }<br>
+                                    let sumRes = sumAll(1,2,3,4,5,6,7)<br>console.log(sumRes)
+                                </code>
+                                <br>В даному випадку буде результатом загальне значення параметрів які були передані в sumAll
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+            <!-- Рядки -->
+            <div class="accordion-item four">
+                <h2 class="accordion-header" id="flush-headingFour">
+                    <button class="accordion-button collapsed btn_accord_style" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        <p class="header_name_item_stl">Рядки</p>
+                    </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                    <article class="accordion_body">
+                        <p class="sec_tit_txt_acord">Основи</p>
+                        <p><code>let someText = `Привіт, мене звати ${name} мій вік ${age}`</code><code class="comment_code">// Це варіант запису являється простішим для сприймання і в <code>${..}</code> можна передавати не лише змінні а і функції, і тернарні вирази. Обов'язковою умовою є використання кавичок з нахилом<code>` `</code></code></p>
+                        <p class="sec_tit_txt_acord">Нові методи роботи з рядками</p>
+                        <p>Приклад методів для роботи з рядками.Для прикладу присутня змінна <code> let myName = 'Борис'</code></p>
+                        <ul>
+                            <li class="list_style_accord"><code>console.log(myName.startsWith('Бо'))</code> Перевірка чи рядок починається з "Бо". вертає значення true/false. Метод чутливий до регістру "Бо" "бо"</li>
+                            <li class="list_style_accord"><code>console.log(myName.endsWith('ис'))</code> Перевірка чи рядок закінчується на "ис". вкртає значення true/false.</li>
+                            <li class="list_style_accord"><code>console.log(myName.includes('ри'))</code> Перевірка чи є така підрядок в рядку. Вертає значення true/false. </li>
+                            <li class="list_style_accord"><code>console.log(myName.repeat(3))</code> Вказуємо скільки разів повторити рядок, в даному випадку 3</li>
+                            <li class="list_style_accord"><code>console.log(myName.trim())</code> Видаляє всі пробіли в змінній</li>
+                            <li class="list_style_accord"><code>console.log(myName.trimStart())</code> Видалення пробілів спочатку</li>
+                            <li class="list_style_accord"><code>console.log(myName.trimEnd())</code> Видалення пробілів вкінці</li>
+                            <li class="list_style_accord"><code>console.log(myName.padStart(5 , 'символи якими заповнити'))</code> Задає мінімальне значення довжини та добаляє символи в початок якщо не відповідає заданій кількості</li>
+                            <li class="list_style_accord"><code>console.log(myName.padEnd(5 , 'символи якими заповнити'))</code> Задає мінімальне значення довжини та добаляє символи в кінець якщо не відповідає заданій кількості</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+            <!-- Оператори rest та spread -->
+            <div class="accordion-item five">
+                <h2 class="accordion-header" id="flush-headingFive">
+                    <button class="accordion-button collapsed btn_accord_style" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                        <p class="header_name_item_stl">Оператори rest та spread</p>
+                    </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                    <article class="accordion_body">
+                        <p class="sec_tit_txt_acord">Оператор Rest</p>
+                        <p> Приклад використання даного оператору: </p>
+                        <p><code> function someFunc(...arg) { <code class="comment_code">// '...' в даному випадку і є оператор rest. Який приймає в себе всі знічення які передаються в функцію де 'arg' це змінна яка прийме ці значення у вигляді масиву</code> <br> &nbsp; return args.reduce ((acc , i) => acc += i, 0) / args.length <br> } <br> console.log(someFunc(10,15,30,45,90))</code></p>
+                        <p>В даному випадку можна в функцію передавати ще додаткові знічення, якщо перед <code>...arg</code> вказати змінні, то ця змінна буде приймати значення першого елементу який передається, а інші елементи підуть в змінну args</p>
+                        <p><code> function someFunc(a, b, ...arg) { <br> &nbsp; return args.reduce ((acc , i) => acc += i, 0) / args.length <br> } <br> console.log(someFunc(10,15,30,45,90))</code> <code class="comment_code"> Де "а" = 10, "b" = 15, args = [30,45,90]</code></p>
+                        <p class="sec_tit_txt_acord">Оператор Spread</p>
+                        <p> Приклад використання даного оператору: </p>
+                        <p><code>const arr = [1,2,6,8,12] <br> console.log(...arr)</code> <br> <code> '...' </code>в даному випадку оператор spread розгортає масив . де в консолі буде замість відображення масиву просто перелік елементів <code>1 2 6 8 12 </code> </p>
+                        <p class="sec_tit_txt_acord">Деструктуризація</p>
+                        <p> Даний функціонал дозволяє бистро отримувати необхідне значення, приклад використання: </p>
+                        <p><code>const arr = [1,2,6,8,12] <br> const [a,b] = array <br> console.log(a,b) <br> </code> після чого ми отримали елементи 1 та 2 з масиву arr </p>
+                        <p>Приклад роботи з об'єктами: </p>
+                        <p><code>let person = { <br> &nbsp; age : 30,<br> &nbsp; name : 'Boris'<br> } </code></p>
+                        <p><code>let {age, name} = person</code> В даному випадку отримаємо окремі змінні age та name з об'єкту person до яких можна звернутись </p>
+                    </article>
+                </div>
+            </div>
+            <!-- Об'єкти -->
+            <div class="accordion-item six">
+                <h2 class="accordion-header" id="flush-headingSix">
+                    <button class="accordion-button collapsed btn_accord_style" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                        <p class="header_name_item_stl">Об'єкти</p>
+                    </button>
+                </h2>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                    <article class="accordion_body">
+                        <p class="sec_tit_txt_acord">Оператор Rest</p>
+                    </article>
+                </div>
+            </div>
 
+
+        </div>
     </body>
 </html>
