@@ -177,10 +177,213 @@
                 </h2>
                 <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
                     <article class="accordion_body">
-                        <p class="sec_tit_txt_acord">Оператор Rest</p>
+                        <p class="sec_tit_txt_acord">Нові методи</p>
+                        <p>Для прикладу буде використовуватись об'єкт: <br> <code>let person = { <br> &nbsp; name: 'Boris', <br> &nbsp; age: 29,<br> &nbsp; country: 'Ukrain', <br> &nbsp; languages: ['UA','EN','RU'], <br>}<br></code></p>
+                        <ul>
+                            <li class="list_style_accord"><code>Object.keys(person)</code> <code class="comment_code"> // Отримує ключі об'єкту у вигляді масиву</code> </li>
+                            <li class="list_style_accord"><code>Object.values(person)</code><code class="comment_code"> // Повертає масив значень ключів</code></li>
+                            <li class="list_style_accord"><code>Object.entries(person)</code><code class="comment_code"> // Повертає масив пар [ ключ, значення ]</code></li>
+                            <li class="list_style_accord"><code>Object.assign(Obj1 , Obj2)</code><code class="comment_code"> // Поєднує 2 об'єкта в 1. Якщо потрібно без зміни попередній об'єктів створити окремий , то потрібно перед першим об'єктом використати <code> { } </code> Приклад: <code>Object.assign({},Obj1, Obj2)</code></li>
+                        </ul>
+                        <p> Присутня змога використання динамічних ключів, приклад:</p>
+                        <p><code> let city = 'Місто' <br> let person = { <br> &nbsp; name: 'Boris', <br> &nbsp; [city] : 'Київ' <br> &nbsp; age: 29,<br> &nbsp; country: 'Ukrain', <br> &nbsp; languages: ['UA','EN','RU'], <br>}<br> </code> В даному випадку додасть ключ, з назвою змінної, та з вказаним значенням. </p>
+                        <p><code> let job = 'Front-end'</code> якщо назва змінної , однакова як і  назва необхідного ключа, то можливий наступний запис як ключа в об'єкті, приклад:  </p>
+                        <p><code>let person = { <br> &nbsp; name: 'Boris', <br> &nbsp; job, <br> &nbsp; age: 29,<br> &nbsp; country: 'Ukrain', <br> &nbsp; languages: ['UA','EN','RU'], <br>}<br> </code></p>
+                        <p>Тоді якщо переглянути об'єкт в консолі ( для прикладу ) то буде відображено ключ <code> job: 'Front-end' </code></p>
                     </article>
                 </div>
             </div>
+            <!-- Модулі Import/Export -->
+            <div class="accordion-item seven">
+                <h2 class="accordion-header" id="flush-headingSeven">
+                    <button class="accordion-button collapsed btn_accord_style" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                        <p class="header_name_item_stl">Модулі Import/Export</p>
+                    </button>
+                </h2>
+                <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                    <article class="accordion_body">
+                        <p class="sec_tit_txt_acord">Export</p>
+                        <p>Export - використовується для експорту того чи іншого елементу з даного файлу</p>
+                        <p>Приклад використання в коду: <code>export const color = '#fff' </code></p>
+                        <p class="sec_tit_txt_acord">Import</p>
+                        <p>Import - використовується для імпорту в файл раніше експортованих елементів </p>
+                        <p>Приклад використання в коду: <code> import {тут вказуються назви елементів які імпортуємо} from 'тут вказується шлях до файлу з якого імпортуємо' </code></p>
+                    </article>
+                </div>
+            </div>
+            <!-- Класи -->
+            <div class="accordion-item eight">
+                <h2 class="accordion-header" id="flush-headingEight">
+                    <button class="accordion-button collapsed btn_accord_style" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+                        <p class="header_name_item_stl">Класи</p>
+                    </button>
+                </h2>
+                <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+                    <article class="accordion_body">
+                        <p class="sec_tit_txt_acord">Основи</p>
+                        <p> За допомогою ключового слова <code>class</code> можна створювати класи, приклад:</p>
+                        <p><code>class Person { <br> &nbsp; тут необхідно описувати тіло класу <br> } <br> </code></p>
+                        <p><code>class Person { <br> &nbsp; constructor (name) <code class="comment_code"> // name це параметр  <br> &nbsp; &nbsp; </code>this.name = name <br> &nbsp; } <br> }</code></p>
+                        <p class="sec_tit_txt_acord">Наслідуванність</p>
+                        <p> При формування классу , який буде наслідувати якийсь інший клас , необхідно використовувати ключове слово <code>extends</code> та вказати який клас наслідуємо, приклад:</p>
+                        <p><code> class Programmer extends Person { <code class="comment_code"> // в даному прикладі клас <code>Programmer</code> наслідує клас "Person"</code> <br> &nbsp; constructor(name, job){ <br> &nbsp &nbsp super(name) <code class="comment_code"> // Ключове слово super вказує звернення на бітьківський класс , якщо звертатись до методів батьківського класу, то необхідно звертатись як до об'єкту super.greet()</code> <br> &nbsp &nbsp this.job = job <br> &nbsp } <br>}  <br> </code></p>
+                        <p> Після чого буде об'єкт який буде включати і ім'я і роботу <code>let people = new Programmer ('Boris','Front-end')</code> Якщо переглянути через консоль то це буде об'єкт з ім'ям і роботою. Якщо були ще елементи в класі <code>Person</code> вони будуть також присутні в об'єкті </p>
+                        <p class="sec_tit_txt_acord">get - геттер в наслідуванності</p>
+                        <p>Після чого можна використовувати <code>get / set</code> get - геттер , set - сеттер </p>
+                        <p>Приклад використання get :</p>
+                        <p><code> class Programmer extends Person { <br> &nbsp; constructor(name, job){ <br> &nbsp &nbsp super(name) <br> &nbsp &nbsp this._job = job <br> &nbsp } <br> &nbsp; get job() { <br> &nbsp &nbsp return this._job.toUpperCase()<br> &nbsp; } <br>}  <br> </code></p>
+                        <p> Таким чином відбулось звернення напряму до елементу класу job та привели його до верхнього регістру. Та можемо переглянути звернувшись напряму до нього <code>console.log(people.job)</code> </p>
+                        <p class="sec_tit_txt_acord">Статичні методи</p>
+                        <p>Приклад статичних методів:</p>
+                        <p><code>class Util { <br> &nbsp; average(..args) { <br> &nbsp; &nbsp; return args.reduce (( acc, i) => acc += i, 0) / args.length <br> &nbsp; } <br> }</code></p>
+                        <p>Так як немає змоги звернутись напряму до average необхідно зробити наступне: <br> <code>const util = new Util() <br> console.log(util.average( 1,1,2,3,5,8,13))</code> <br> Таким чином буде виконана функція average</p>
+                        <p>Для того щоб уникнути даного запису, можна використати ключове слово <code>static</code></p>
+                        <p><code>class Util { <br> &nbsp; static average(..args) { <br> &nbsp; &nbsp; return args.reduce (( acc, i) => acc += i, 0) / args.length <br> &nbsp; } <br> } <br> Util.average(1,1,2,3,5,8,13)</code> <br> Таким чином буде присутня змога одразу звернутись до методу average </p>
+
+                    </article>
+                </div>
+            </div>
+            <!-- Символи -->
+            <div class="accordion-item nine">
+                <h2 class="accordion-header" id="flush-headingNine">
+                    <button class="accordion-button collapsed btn_accord_style" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+                        <p class="header_name_item_stl">Символи (Symbol)</p>
+                    </button>
+                </h2>
+                <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
+                    <article class="accordion_body">
+                        <p class="sec_tit_txt_acord">Основи</p>
+                        <p><code>Symbol</code> - даний тип даних необхідний для задання унікальних ключуів. Тобто Symbol це певне унікальне значення</p>
+                        <p>Приклад використання даного типу даних: </p>
+                        <p><code>const symbol = Symbol('demo') <code class="comment_code">// Де demo являється рядком який виявляє даний символ</code> <br> let obj = { <br> &nbsp; name: 'Boris', <br>&nbsp; [symbol]: 'meta' <br> } </code></p>
+                        <p>Якщо проходити по ключам за допомогою циклу<code>for in</code> то в даному випадку <code>[symbol]</code> не буде врахований в циклі</p>
+                        <div class="contet_with_button">
+                            <p> Більш детальніше з символами та їх видами можна ознайомитись за посиланням:</p>
+                            <a class='preff_link' href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol" target="_blank"> Перейти до ознайомлення </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <!-- Ітератори та генератори -->
+            <div class="accordion-item ten">
+                <h2 class="accordion-header" id="flush-headingTen">
+                    <button class="accordion-button collapsed btn_accord_style" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+                        <p class="header_name_item_stl">ітератори / генератори</p>
+                    </button>
+                </h2>
+                <div id="flush-collapseTen" class="accordion-collapse collapse" aria-labelledby="flush-headingTen" data-bs-parent="#accordionFlushExample">
+                    <article class="accordion_body">
+                        <p class="sec_tit_txt_acord">Ітератори</p>
+                        <p> Приклад використання ітераторів:</p>
+                        <p><code>let arr = [1,2,3,4] <br> let iter = arr[Symbol.iterator]() <br> console.log(iter.next()) <br> </code> де <code>next()</code> являється методом ітератору</p>
+                        <p>Для проходження по масиву використовуючи ітератор також використовують цикл <code>forof</code>. Приклад: </p>
+                        <p><code>for(let i of arr){<code class="comment_code">// де "і" це ітератор</code><br> &nbsp; console.log(i)<br>}<br></code> В даному випадку буде виведено всі елементи масиву</p>
+                        <p class="sec_tit_txt_acord">Генератори</p>
+                        <p> Приклад використання генераторів:</p>
+                        <p><code>function *gen(num = 4){ <code class="comment_code"> // Для призначення функгії генератора , достатньо використати "*" перед назвою функції</code> <br>&nbsp for (let i = 0; i менше num; i++){<br>&nbsp &nbsp yield i <code class="comment_code"> // Де "yield" ключове слово яке видає необхідне значення</code><br> &nbsp }<br> }<br> let iter = gen(3) <br> console.log(iter.next())</code></p>
+                    </article>
+                </div>
+            </div>
+            <!-- Проміси -->
+            <div class="accordion-item eleven">
+                <h2 class="accordion-header" id="flush-headingEleven">
+                    <button class="accordion-button collapsed btn_accord_style" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
+                        <p class="header_name_item_stl">Проміси</p>
+                    </button>
+                </h2>
+                <div id="flush-collapseEleven" class="accordion-collapse collapse" aria-labelledby="flush-headingEleven" data-bs-parent="#accordionFlushExample">
+                    <article class="accordion_body">
+                        <p class="sec_tit_txt_acord">Основи</p>
+                        <p>Проміси - це зручна конструкція яка дозволяє працювати з асинхронним кодом</p>
+                        <p>Приклад використання промісів: </p>
+                        <p><code>const promise = new Promise((resolve,reject) => { <br> &nbsp setTimeout(() => { <br>&nbsp &nbsp console.log('Hi') <br>&nbsp ,500})<br> })</code></p>
+                        <p><code>resolve , reject</code> - це являються 2 функції які можна викликита тоді коли потрібно. resolve - виконано успішно, reject - завершено з помилкою</p>
+                        <p>Проміс повертає об'єкт, до якого можна використати наступні методи:</p>
+                        <ul>
+                            <li class="list_style_accord"><code>promise.catch</code> приклад використання: <br> <code>promise.catch(err => console.log(err))</code> Дозволяє отримати помилку </li>
+                            <li class="list_style_accord"><code>promise.next</code> приклад використання: <br> <code>promise.next( data => console.log(data))</code> Тобто метод then буде викликаний тоді, коли закінчиться ассинхронний код</li>
+                            <li class="list_style_accord"><code>promise.finally</code> приклад використання: <br> <code>promise.finally( data => console.log('Finally text'))</code> Викликається навіть якщо була присутня помилка</li>
+                        </ul>
+                        <p class="sec_tit_txt_acord">async / await</p>
+                        <p>За допомогою ключового слова <code>async</code> можна позначити функцію асинхронною. Приклад:</p>
+                        <p><code>async function someFuncDelay (){ <br> &nbsp; let data = await promise(500) <code class="comment_code"> // ключове слово "await" вказує до якої функції використати проміс, так як повертає значення можна присвоїти змінній </code>  <br>}</code></p>
+                        <p> Для того щоб обробляти помилки не зупиняючи програму можна використати <code>try / catch</code>, приклад:</p>
+                        <p><code>async function someFuncDelay (){ <br> &nbsp; try { <br> &nbsp; &nbsp; let data = await promise(500) <br> &nbsp; } <br>&nbsp; catch (e) {<br> &nbsp; &nbsp; console.log('Error', e)<br> &nbsp;  }  <br>}</code></p>
+                        <p>Для роботи з групою промісів необхідно звернутись до глобального <code>Promise</code> з використанням методу <code>all</code>, приклад:</p>
+                        <p><code>Promise.all([ <br> &nbsp promise(500), <br> &nbsp promise(1000), <br> &nbsp promise(1500) <br> ])</code> <br> В даному випадку буде виконано деуілька промісів та результат яких поверне у вигляді масиву, який буде також промісом. Але лише по завершенню всіх промісів</p>
+                        <p>Для роботи з групою промісів необхідно звернутись до глобального <code>Promise</code> з використанням методу <code>race</code>, приклад:</p>
+                        <p><code>Promise.race([ <br> &nbsp promise(500), <br> &nbsp promise(1000), <br> &nbsp promise(1500) <br> ])</code> <br> В даному випадку буде виконано деуілька промісів та результат яких поверне у вигляді масиву, який буде також промісом. Виконується після завершення найшвидчого</p>
+                    </article>
+                </div>
+            </div>
+            <!-- Структури даних map / set -->
+            <div class="accordion-item twelve">
+                <h2 class="accordion-header" id="flush-headingTwelve">
+                    <button class="accordion-button collapsed btn_accord_style" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+                        <p class="header_name_item_stl">Структури даних map / set</p>
+                    </button>
+                </h2>
+                <div id="flush-collapseTwelve" class="accordion-collapse collapse" aria-labelledby="flush-headingTwelve" data-bs-parent="#accordionFlushExample">
+                    <article class="accordion_body">
+                        <p class="sec_tit_txt_acord">Map</p>
+                        <p><code>Map</code> являється аналогом об'єкту, лише більш продвинутим, приклад:</p>
+                        <p><code>let someMap = new Map (<br> &nbsp [ ['a', 1 ] ]<br>) <br> console.log(someMap) <code class="comment_code"> // В даному випадку буде створено об'єкт з елементом "а" який рівний 1.</code></code></p>
+                        <p>Присутні методи для <code>Map</code>:</p>
+                        <ul>
+                            <li class="list_style_accord"><code>get("а")</code> Отримати значення певного елементу</li>
+                            <li class="list_style_accord"><code>set("Б", 3)</code> Додати значення для об'єкту. Після використання повертає об'.єкт вже з цим значенням</li>
+                            <li class="list_style_accord"><code>clear()</code> Повне очищення map</li>
+                            <li class="list_style_accord"><code>has(12)</code> Перевірка чи наявний ключ в map</li>
+                            <li class="list_style_accord"><code>delete('a')</code> Видалення ключа "а". Повертає boolean значення чи успішно чи ні видалено.</li>
+                            <li class="list_style_accord"><code>size</code> Перевірка кількості елементів</li>
+                            <li class="list_style_accord"><code>keys()</code> Прегляд ключів (ітератор)</li>
+                            <li class="list_style_accord"><code>values()</code> Прегляд значень ключів (ітератор)</li>
+                        </ul>
+                        <p class="sec_tit_txt_acord">set</p>
+                        <p><code>Set</code> являється аналогом масиву, але має свої особливості, він не зберігає в собі дублікати, приклад:</p>
+                        <p><code> let someSet = new Set([1,1,1,1,1,3,4,5,6]) <br> console.log(someSet)</code> <br> В даному випадку буде виведено масив [1,3,4,5,6]</p>
+                        <p>Методи для роботи з <code>set</code>:</p>
+                        <ul>
+                            <li class="list_style_accord"><code>size</code> Розмір сету </li>
+                            <li class="list_style_accord"><code>add('12')</code> Додавання елементу</li>
+                            <li class="list_style_accord"><code>clear()</code> Очищення сету</li>
+                            <li class="list_style_accord"><code>delete(1)</code> Видалення елементу</li>
+                            <li class="list_style_accord"><code>keys()</code> Перегляд елементів (ітератор)</li>
+                            <li class="list_style_accord"><code>values()</code> Прегляд елементів (ітератор)</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+            <!-- Reflect -->
+            <div class="accordion-item thirteen">
+                <h2 class="accordion-header" id="flush-headingThirteen">
+                    <button class="accordion-button collapsed btn_accord_style" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThirteen" aria-expanded="false" aria-controls="flush-collapseThirteen">
+                        <p class="header_name_item_stl">Reflect</p>
+                    </button>
+                </h2>
+                <div id="flush-collapseThirteen" class="accordion-collapse collapse" aria-labelledby="flush-headingThirteen" data-bs-parent="#accordionFlushExample">
+                    <article class="accordion_body">
+                        <p class="sec_tit_txt_acord">Основи</p>
+                        <p>На відміну більшості глобальних об'єктів, Reflect - це конструктор. Ви не можете використовувати його з оператором new або викликати Reflect як функцію. Усі властивості та методи об'єкта Reflect є статичними (як і в об'єкта Math).</p>
+                        <p>Приклад використання класу: </p>
+                        <p><code>class Student {<br> &nbsp constructor(name,age){<br> &nbsp &nbsp this.name = name<br> &nbsp &nbsp this.age = age <br> &nbsp <br> &nbsp greet(){<br> &nbsp &nbsp console.log(`Hellow Mr.${this.name}, I'm ${this.age} years old`);<br> &nbsp }<br> }<br> const student = new Student('Boris',29)<br> student.greet()<br></code></p>
+                        <p>Приклад використання <code>reflect</code> з класом: </p>
+                        <p><code>class Student {<br> &nbsp constructor(name,age){<br> &nbsp &nbsp this.name = name<br> &nbsp &nbsp this.age = age <br> &nbsp <br> &nbsp greet(){<br> &nbsp &nbsp console.log(`Hellow Mr.${this.name}, I'm ${this.age} years old`);<br> &nbsp }<br> }<br> const student = Reflect.construct(Student, ['Boris', 29]) <code class="comment_code"> // де приймає значення Reflect.constructor(назва класу, [змінна 1,змінна 2])</code><br></code></p>
+                        <p class="sec_tit_txt_acord">Методи Reflect</p>
+                        <ul>
+                            <li class="list_style_accord"><code>Reflect.apply(метод класу, з яким тонтекстом викликати, набір аргументів(якщо вони є в методі))</code> Дозволяє визивати методи з певним контестом та необхідними параметрами. Приклад: <br> <code> Reflect.apply(srudent.greet, {name:'Tester'}, [])</code></li>
+                            <li class="list_style_accord"><code>Reflect.ownKeys(необхідний об'єкт)</code> Отримання переліку ключів об'єкту у вигляді масиву</li>
+                            <li class="list_style_accord"><code>Reflect.preventExtensions(об'єкт)</code> Блокування модифікації об'єкту</li>
+                            <li class="list_style_accord"><code>Reflect.isExtensible(об'єкт))</code> Перевірка чи заблокований для модифікації об'єкт</li>
+                        </ul>
+                        <div class="contet_with_button">
+                            <p> Більш детальніше з методами <code>Reflect</code> та їх видами можна ознайомитись за посиланням:</p>
+                            <a class='preff_link' href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Reflect" target="_blank"> Перейти до ознайомлення </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
 
 
         </div>

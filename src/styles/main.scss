@@ -8,7 +8,15 @@
 .three,
 .four,
 .five,
-.six{
+.six,
+.seven,
+.eight,
+.nine,
+.ten,
+.eleven,
+.twelve,
+.thirteen,
+.forteen{
     opacity: 0;
 }
 .fadeIn {
@@ -84,6 +92,7 @@ code{
     background: rgba(136, 136, 136, 0.3);
     padding: 5px 0 3px;
     border-radius: 5px;
+    color: #212122
 }
 .content_art{
     font: 400 15px $f_c;
@@ -113,4 +122,33 @@ code{
 .accordion_body{
     padding: 15px;
     font: 500 15px $f_c;
+    color: #212122
+}
+.contet_with_button{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-flow: column;
+    align-items: center;
+    border: 1px solid rgba(33,33,34,.137254902);
+    padding: 10px 10px;
+    border-radius: 15px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+.preff_link {
+    padding: 5px;
+    border-radius: 5px;
+    color: rgba(33,33,34,.8352941176);
+    background: rgba(33,33,34,.137254902);
+    transition: .3s all ease-in-out;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 10px;
+
+    &:hover{
+        background: rgba(33,33,34,.7333333333);
+        color: #fff;
+    }
 }
