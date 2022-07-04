@@ -18,23 +18,8 @@ let arrBlock = [block1,block2,block3,block4,block5,block6,block7,block8,block9,b
 
 function showWithDelay(arrBlock) {
     for (let i = 0; i < arrBlock.length; i++) {
-        setTimeout(() => { arrBlock[i].classList.add('fadeIn')}, 1 * i);
+        setTimeout(() => { arrBlock[i].classList.add('fadeIn')}, 250 * i);
     }
 }
 showWithDelay(arrBlock);
 // Завершення коду появи блоків
-
-// class Student {
-//     constructor(name,age,lang){
-//         this.name = name
-//         this.age = age
-//         this.lang = lang
-//     }
-//     greet(){
-//         console.log(`Hellow Mr.${this.name}, I'm ${this.age} years old, and i'm from ${this.lang}`);
-//     }
-// }
-// const student = Reflect.construct(Student, ['Boris', 29, 'UA'])
-// Reflect.preventExtensions(student)
-// console.log(Reflect.isExtensible(student));
-// student.greet()

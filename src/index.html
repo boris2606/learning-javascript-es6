@@ -383,6 +383,30 @@
                     </article>
                 </div>
             </div>
+            <!-- Proxy -->
+            <div class="accordion-item forteen">
+                <h2 class="accordion-header" id="flush-headingForteen">
+                    <button class="accordion-button collapsed btn_accord_style" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseForteen" aria-expanded="false" aria-controls="flush-collapseForteen">
+                        <p class="header_name_item_stl">Proxy</p>
+                    </button>
+                </h2>
+                <div id="flush-collapseForteen" class="accordion-collapse collapse" aria-labelledby="flush-headingForteen" data-bs-parent="#accordionFlushExample">
+                    <article class="accordion_body">
+                        <p class="sec_tit_txt_acord">Основи</p>
+                        <p>Proxy - це клас . який дозволяє ставити пастки на любі об'єкти</p>
+                        <p>Приклад Proxy: <code>const formProxy = new Proxy(form, validator)</code> - де <code>form</code> - це об'єкт який буде досліджено, <code>validator</code> - об'єкт пасток які характерні для Proxy</p>
+                        <p class="sec_tit_txt_acord">Приклад використання з об'єктами</p>
+                        <p>На прикладі буде створено валідатор:</p>
+                        <p><code>const validator = { <br>&nbsp get (target, prop) { <br>&nbsp &nbsp return prop in target ? target[prop] : `Поля ${prop} в об'єкті відсутнє` <br>&nbsp }, <br>&nbsp set (target, prop, value){ <br>&nbsp &nbsp if (value.length > 2 ) { <br>&nbsp &nbsp &nbsp Reflect.set(target, prop, value) <code class="comment_code">// Дайний метод задає параметри</code> <br>&nbsp &nbsp } else { <br>&nbsp &nbsp &nbsp console.log('Довжина повинна бути більше двух символів, наразі ' + value.length) <br>&nbsp &nbsp }<br>&nbsp }<br> }<br> const form = { <br>&nbsp login: 'Test', <br>&nbsp pass: '12345' <br> } <br> const formProxy = new Proxy(form, validator) <br> console.log(formProxy.pass)</code></p>
+                        <p>В даному випадку було створено 2 об'єкти, де <code>validator</code> - це об'єкт з правилами валідації що містить <code> get </code> i <code> set </code>, в якому медот <code> get </code> перевіряє наявність ключа в об'єкті , а <code> set </code> перевіряє його довжину, яка має бути більше 2 символів </p>
+                        <p>Далі використовуємо <code>Proxy</code>: <br> <code> const formProxy = new Proxy(form, validator)</code> - де <code>form</code> - це об'єкт який буде досліджено, <code>validator</code> - об'єкт пасток які характерні для Proxy</p>
+                        <p>Після чого якщо звернутись до будь якого поля досліджуваного <code>Proxy</code> об'єкту, та воно не буде відповідати валідації , будуть виведені вказані сповіщення. <code>console.log(formProxy.pass)</code></p>
+                        <p class="sec_tit_txt_acord">Приклад використання з функціями</p>
+                        <p><code>function log (message){ <br>&nbsp console.log('[LOG]: ', message);<br> }<br> const proxy = new Proxy(log, {<br>&nbsp apply(target, thisArg, argArray){<br>&nbsp &nbsp if (argArray.length === 1){ <br>&nbsp &nbsp &nbsp Reflect.apply(target, thisArg, argArray)<br>&nbsp &nbsp } else {<br>&nbsp &nbsp &nbsp console.log('Кількість аргументів не співпадає');<br>&nbsp &nbsp}<br>&nbsp}<br>})<br> proxy('Some message')</code></p>
+                        <p>В даному випадку <code>apply</code> буде викликано якщо будемо викликати функцію <code>log</code>. <code>apply</code> приймає в себе 3 значнення: <code>target</code> - функція яку бажаємо викликати, <code>thisArg</code> - контекст, <code>argArray</code> - масив параметрів. В даному випадку якщо в <code>proxy</code> буде передано 1 параметр тоді в лог буде виведено його, якщо більше 1 , або взагалом без паарметрів, тоді буде сповіщення "Кількість аргументів не співпадає" </p>
+                    </article>
+                </div>
+            </div>
 
 
 
