@@ -3,20 +3,7 @@
 @import "~bootstrap/scss/bootstrap";
 
 // Для плавної появи стилі
-.first,
-.two,
-.three,
-.four,
-.five,
-.six,
-.seven,
-.eight,
-.nine,
-.ten,
-.eleven,
-.twelve,
-.thirteen,
-.forteen{
+.fadeBlock{
     opacity: 0;
 }
 .fadeIn {

@@ -1,25 +1,9 @@
-// Появлення блоків
-let block1 = document.querySelector('.first')
-let block2 = document.querySelector('.two')
-let block3 = document.querySelector('.three')
-let block4 = document.querySelector('.four')
-let block5 = document.querySelector('.five')
-let block6 = document.querySelector('.six')
-let block7 = document.querySelector('.seven')
-let block8 = document.querySelector('.eight')
-let block9 = document.querySelector('.nine')
-let block10 = document.querySelector('.ten')
-let block11 = document.querySelector('.eleven')
-let block12 = document.querySelector('.twelve')
-let block13 = document.querySelector('.thirteen')
-let block14 = document.querySelector('.forteen')
-
-let arrBlock = [block1,block2,block3,block4,block5,block6,block7,block8,block9,block10,block11,block12,block13,block14]
-
-function showWithDelay(arrBlock) {
-    for (let i = 0; i < arrBlock.length; i++) {
-        setTimeout(() => { arrBlock[i].classList.add('fadeIn')}, 250 * i);
+// Поява блоків
+let listBlock = document.querySelectorAll('.fadeBlock')
+function showWithDelay(listBlock) {
+    for (let i = 0; i < listBlock.length; i++) {
+        setTimeout(() => { listBlock[i].classList.add('fadeIn')}, 200 * i);
     }
 }
-showWithDelay(arrBlock);
+showWithDelay(listBlock);
 // Завершення коду появи блоків
